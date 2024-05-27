@@ -6,4 +6,4 @@
 
 - Project source code: https://github.com/ffitalludba/slib
 
-- Hosting server: TODO
+- Hosting server: 150.230.191.57
