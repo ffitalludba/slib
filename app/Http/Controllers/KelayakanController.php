@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kelayakan;
 use Illuminate\Http\Request;
 
-class ProfailController extends Controller
+class KelayakanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +34,7 @@ class ProfailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Kelayakan $kelayakan)
     {
         //
     }
@@ -41,7 +42,7 @@ class ProfailController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Kelayakan $kelayakan)
     {
         //
     }
@@ -49,7 +50,7 @@ class ProfailController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Kelayakan $kelayakan)
     {
         //
     }
@@ -57,7 +58,7 @@ class ProfailController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Kelayakan $kelayakan)
     {
         //
     }

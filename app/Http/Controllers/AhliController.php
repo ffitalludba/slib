@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SenaraiUtamaJudul;
+use App\Models\Ahli;
 use Illuminate\Http\Request;
 
-class SenaraiUtamaJudulController extends Controller
+class AhliController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class SenaraiUtamaJudulController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SenaraiUtamaJudul $senaraiUtamaJudul)
+    public function show(Ahli $ahli)
     {
         //
     }
@@ -42,7 +42,7 @@ class SenaraiUtamaJudulController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SenaraiUtamaJudul $senaraiUtamaJudul)
+    public function edit(Ahli $ahli)
     {
         //
     }
@@ -50,7 +50,7 @@ class SenaraiUtamaJudulController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SenaraiUtamaJudul $senaraiUtamaJudul)
+    public function update(Request $request, Ahli $ahli)
     {
         //
     }
@@ -58,7 +58,7 @@ class SenaraiUtamaJudulController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SenaraiUtamaJudul $senaraiUtamaJudul)
+    public function destroy(Ahli $ahli)
     {
         //
     }

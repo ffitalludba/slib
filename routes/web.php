@@ -1,32 +1,38 @@
 <?php
 
+use App\Http\Controllers\AhliController;
 use App\Http\Controllers\BahanController;
 use App\Http\Controllers\BahasaController;
 use App\Http\Controllers\BidangController;
+use App\Http\Controllers\DaftarJudulController;
 use App\Http\Controllers\JenisController;
 use App\Http\Controllers\JudulController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\KelasController;
+use App\Http\Controllers\KelayakanController;
+use App\Http\Controllers\KemasKiniTahunanController;
+use App\Http\Controllers\KlasifikasiController;
+use App\Http\Controllers\KumpulanController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\LokasiController;
+use App\Http\Controllers\OlehanController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\CutiController;
 use App\Http\Controllers\InstitusiController;
-use App\Http\Controllers\PerolehanController;
-use App\Http\Controllers\ProfailController;
-use App\Http\Controllers\ProsesApdmController;
-use App\Http\Controllers\ProsesTahunanController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PuncaController;
-use App\Http\Controllers\SenaraiUtamaJudulController;
-use App\Http\Controllers\SubjekController;
-use App\Http\Controllers\UtamaController;
+use App\Http\Controllers\SirkulasiController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 
 
-Route::redirect('/', 'utama');
+Route::get('log_masuk', [LogController::class, 'masuk']);
 
-Route::get('utama', UtamaController::class);
+Route::get('log_keluar', [LogController::class, 'keluar']);
 
-Route::singleton('profail', ProfailController::class);
+Route::singleton('profil', ProfilController::class);
+
+Route::get('dashboard_pentadbir', null);
 
 Route::resource('pengguna', PenggunaController::class);
 
@@ -36,15 +42,13 @@ Route::resource('cuti', CutiController::class);
 
 Route::singleton('polisi', InstitusiController::class);
 
-Route::get('proses_tahunan', ProsesTahunanController::class);
-
-Route::get('proses_apdm', ProsesApdmController::class);
+Route::get('kemas_kini_tahunan', [KemasKiniTahunanController::class, 'show']);
 
 Route::resource('jenis', JenisController::class);
 
 Route::resource('bahasa', BahasaController::class);
 
-Route::resource('subjek', SubjekController::class);
+Route::resource('klasifikasi', KlasifikasiController::class);
 
 Route::resource('lokasi', LokasiController::class);
 
@@ -54,12 +58,46 @@ Route::resource('punca', PuncaController::class);
 
 Route::resource('bidang', BidangController::class);
 
-Route::resource('senarai_utama_judul', SenaraiUtamaJudulController::class);
+Route::resource('daftar_judul', DaftarJudulController::class);
 
 Route::resource('judul', JudulController::class);
 
 Route::resource('bahan', BahanController::class);
 
-Route::resource('perolehan', PerolehanController::class);
+Route::resource('olehan', OlehanController::class);
 
+Route::resource('kumpulan', KumpulanController::class);
 
+Route::resource('ahli', AhliController::class);
+
+Route::resource('kelas', KelasController::class);
+
+Route::resource('kelayakan', KelayakanController::class);
+
+Route::get('pinjaman', [SirkulasiController::class, 'pinjaman']);
+
+Route::get('pulangan', [SirkulasiController::class, 'pulangan']);
+
+Route::get('bayaran_denda', [SirkulasiController::class, 'bayaranDenda']);
+
+Route::get('cetakan_surat_peringatan', null);
+
+Route::get('cetakan_sijil_watikah', null);
+
+Route::get('cetakan_sijil_penghargaan', null);
+
+Route::get('cetakan_kod_bar', null);
+
+Route::get('cetakan_tulang_buku', null);
+
+Route::get('laporan', null);
+
+Route::get('huraian', null);
+
+Route::get('butiran', null);
+
+Route::get('dashboard_ahli', null);
+
+Route::get('pinjaman_semasa', null);
+
+Route::get('pinjaman_lampau', null);

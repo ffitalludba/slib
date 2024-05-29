@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Perolehan;
+use App\Models\Olehan;
 use Illuminate\Http\Request;
 
-class PerolehanController extends Controller
+class OlehanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class PerolehanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Perolehan $perolehan)
+    public function show(Olehan $olehan)
     {
         //
     }
@@ -42,7 +42,7 @@ class PerolehanController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Perolehan $perolehan)
+    public function edit(Olehan $olehan)
     {
         //
     }
@@ -50,7 +50,7 @@ class PerolehanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Perolehan $perolehan)
+    public function update(Request $request, Olehan $olehan)
     {
         //
     }
@@ -58,7 +58,7 @@ class PerolehanController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Perolehan $perolehan)
+    public function destroy(Olehan $olehan)
     {
         //
     }

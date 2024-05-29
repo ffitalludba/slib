@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Subjek;
+use App\Models\DaftarJudul;
 use Illuminate\Http\Request;
 
-class SubjekController extends Controller
+class DaftarJudulController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class SubjekController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Subjek $subjek)
+    public function show(DaftarJudul $daftarJudul)
     {
         //
     }
@@ -42,7 +42,7 @@ class SubjekController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Subjek $subjek)
+    public function edit(DaftarJudul $daftarJudul)
     {
         //
     }
@@ -50,7 +50,7 @@ class SubjekController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Subjek $subjek)
+    public function update(Request $request, DaftarJudul $daftarJudul)
     {
         //
     }
@@ -58,7 +58,7 @@ class SubjekController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Subjek $subjek)
+    public function destroy(DaftarJudul $daftarJudul)
     {
         //
     }
