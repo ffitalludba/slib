@@ -9,7 +9,7 @@ class LogController extends Controller
 {
     public function masuk() : View
     {
-        return view(null);
+        return view('log_masuk');
     }
 
     public function keluar() : View

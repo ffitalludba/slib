@@ -4,9 +4,9 @@ use App\Http\Controllers\AhliController;
 use App\Http\Controllers\BahanController;
 use App\Http\Controllers\BahasaController;
 use App\Http\Controllers\BidangController;
-use App\Http\Controllers\DaftarJudulController;
 use App\Http\Controllers\JenisController;
 use App\Http\Controllers\JudulController;
+use App\Http\Controllers\KatalogController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\KelayakanController;
@@ -26,78 +26,89 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 
 
+Route::view('/', 'indeks');
+
 Route::get('log_masuk', [LogController::class, 'masuk']);
 
 Route::get('log_keluar', [LogController::class, 'keluar']);
 
 Route::singleton('profil', ProfilController::class);
 
-Route::get('dashboard_pentadbir', null);
+Route::prefix('pentadbir')->group(function () {
 
-Route::resource('pengguna', PenggunaController::class);
+    Route::get('dashboard_pentadbir', null);
 
-Route::singleton('institusi', InstitusiController::class);
+    Route::resource('pengguna', PenggunaController::class);
 
-Route::resource('cuti', CutiController::class);
+    Route::singleton('institusi', InstitusiController::class);
 
-Route::singleton('polisi', InstitusiController::class);
+    Route::resource('cuti', CutiController::class);
 
-Route::get('kemas_kini_tahunan', [KemasKiniTahunanController::class, 'show']);
+    Route::singleton('polisi', InstitusiController::class);
 
-Route::resource('jenis', JenisController::class);
+    Route::get('kemas_kini_tahunan', [KemasKiniTahunanController::class, 'show']);
 
-Route::resource('bahasa', BahasaController::class);
+    Route::resource('jenis', JenisController::class);
 
-Route::resource('klasifikasi', KlasifikasiController::class);
+    Route::resource('bahasa', BahasaController::class);
 
-Route::resource('lokasi', LokasiController::class);
+    Route::resource('klasifikasi', KlasifikasiController::class);
 
-Route::resource('kategori', KategoriController::class);
+    Route::resource('lokasi', LokasiController::class);
 
-Route::resource('punca', PuncaController::class);
+    Route::resource('kategori', KategoriController::class);
 
-Route::resource('bidang', BidangController::class);
+    Route::resource('punca', PuncaController::class);
 
-Route::resource('daftar_judul', DaftarJudulController::class);
+    Route::resource('bidang', BidangController::class);
 
-Route::resource('judul', JudulController::class);
+    Route::resource('katalog', KatalogController::class);
 
-Route::resource('bahan', BahanController::class);
+    Route::resource('judul', JudulController::class);
 
-Route::resource('olehan', OlehanController::class);
+    Route::resource('bahan', BahanController::class);
 
-Route::resource('kumpulan', KumpulanController::class);
+    Route::resource('olehan', OlehanController::class);
 
-Route::resource('ahli', AhliController::class);
+    Route::resource('kumpulan', KumpulanController::class);
 
-Route::resource('kelas', KelasController::class);
+    Route::resource('ahli', AhliController::class);
 
-Route::resource('kelayakan', KelayakanController::class);
+    Route::resource('kelas', KelasController::class);
 
-Route::get('pinjaman', [SirkulasiController::class, 'pinjaman']);
+    Route::resource('kelayakan', KelayakanController::class);
 
-Route::get('pulangan', [SirkulasiController::class, 'pulangan']);
+    Route::get('pinjaman', [SirkulasiController::class, 'pinjaman']);
 
-Route::get('bayaran_denda', [SirkulasiController::class, 'bayaranDenda']);
+    Route::get('pulangan', [SirkulasiController::class, 'pulangan']);
 
-Route::get('cetakan_surat_peringatan', null);
+    Route::get('bayaran_denda', [SirkulasiController::class, 'bayaranDenda']);
 
-Route::get('cetakan_sijil_watikah', null);
+    Route::get('cetakan_peringatan', null);
 
-Route::get('cetakan_sijil_penghargaan', null);
+    Route::get('cetakan_watikah', null);
 
-Route::get('cetakan_kod_bar', null);
+    Route::get('cetakan_penghargaan', null);
 
-Route::get('cetakan_tulang_buku', null);
+    Route::get('cetakan_kod_bar', null);
 
-Route::get('laporan', null);
+    Route::get('cetakan_tulang_buku', null);
 
-Route::get('huraian', null);
+    Route::get('laporan', null);
 
-Route::get('butiran', null);
+    Route::get('analisis', null);
 
-Route::get('dashboard_ahli', null);
+    Route::get('butiran', null);
 
-Route::get('pinjaman_semasa', null);
+});
 
-Route::get('pinjaman_lampau', null);
+Route::prefix('ahli')->group(function () {
+
+    Route::get('dashboard_ahli', null);
+
+    Route::get('pinjaman_semasa', null);
+
+    Route::get('pinjaman_lampau', null);
+
+});
+
