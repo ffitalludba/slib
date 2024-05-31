@@ -6,4 +6,4 @@
 
 - Project source code: https://github.com/ffitalludba/slib
 
-- Hosting server: 150.230.191.57
+- Mockup Slib system is up at: http://150.230.191.57
